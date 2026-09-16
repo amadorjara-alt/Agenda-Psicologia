@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agenda Psicológica</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         ENCABEZADO
+    ========================================= -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <img
+                    src="images/logo.png"
+                    alt="Logo del consultorio"
+                >
+
+                <div>
+                    <h1>Agenda Psicológica</h1>
+                    <span>Consultorio psicológico</span>
+                </div>
+
+            </div>
+
+            <div class="nav-links">
+
+                <button
+                    class="nav-btn active"
+                    data-section="inicio">
+                    Inicio
+                </button>
+
+                <button
+                    class="nav-btn"
+                    data-section="pacientes">
+                    Pacientes
+                </button>
+
+                <button
+                    class="nav-btn"
+                    data-section="citas">
+                    Citas
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         CONTENIDO PRINCIPAL
+    ========================================= -->
+
+    <main class="container">
+
+
+        <!-- ====================================
+             INICIO
+        ===================================== -->
+
+        <section
+            id="inicio"
+            class="section active">
+
+            <div class="welcome">
+
+                <div class="welcome-content">
+
+                    <span class="tag">
+                        CONSULTORIO PSICOLÓGICO
+                    </span>
+
+                    <h2>
+                        Cuidar tu mente<br>
+                        también es importante
+                    </h2>
+
+                    <p>
+                        Gestiona pacientes, organiza citas
+                        y mantén la información del consultorio
+                        de forma sencilla y ordenada.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        data-section="citas">
+
+                        Programar una cita
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESUMEN -->
+
+            <div class="dashboard">
+
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>Pacientes registrados</span>
+                        <strong id="totalPacientes">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        📅
+                    </div>
+
+                    <div>
+                        <span>Citas programadas</span>
+                        <strong id="totalCitas">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>Citas activas</span>
+                        <strong id="citasDisponibles">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             PACIENTES
+        ===================================== -->
+
+        <section
+            id="pacientes"
+            class="section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="tag">
+                        GESTIÓN
+                    </span>
+
+                    <h2>Pacientes</h2>
+
+                    <p>
+                        Registra y consulta la información
+                        de los pacientes del consultorio.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULARIO -->
+
+            <div class="form-card">
+
+                <h3>
+                    Registrar paciente
+                </h3>
+
+
+                <form id="formPaciente">
+
+                    <div class="patient-form">
+
+
+                        <!-- FOTO -->
+
+                        <div class="photo-upload">
+
+                            <div
+                                class="photo-preview"
+                                id="fotoPreview">
+
+                                <span>👤</span>
+
+                            </div>
+
+                            <label
+                                for="fotoPaciente"
+                                class="upload-btn">
+
+                                Seleccionar foto
+
+                            </label>
+
+                            <input
+                                type="file"
+                                id="fotoPaciente"
+                                accept="image/png, image/jpeg, image/webp"
+                                hidden
+                            >
+
+                            <small>
+                                JPG, PNG o WEBP
+                            </small>
+
+                        </div>
+
+
+                        <!-- DATOS -->
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="nombrePaciente">
+                                    Nombre completo
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nombrePaciente"
+                                    placeholder="Ej. Juan Pérez"
+                                    maxlength="80"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="telefonoPaciente">
+                                    Teléfono
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="telefonoPaciente"
+                                    placeholder="Ej. 959 121 437"
+                                    maxlength="11"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="correoPaciente">
+                                    Correo Gmail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="correoPaciente"
+                                    placeholder="Ej. juan@gmail.com"
+                                    maxlength="100"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        Registrar paciente
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- TABLA -->
+
+            <div class="table-card">
+
+                <div class="table-header">
+
+                    <h3>
+                        Pacientes registrados
+                    </h3>
+
+                    <span id="contadorPacientes">
+                        0 pacientes
+                    </span>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Foto</th>
+                                <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tablaPacientes"></tbody>
+
+                    </table>
+
+
+                    <div
+                        id="sinPacientes"
+                        class="empty-message">
+
+                        No hay pacientes registrados.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             CITAS
+        ===================================== -->
+
+        <section
+            id="citas"
+            class="section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="tag">
+                        AGENDA
+                    </span>
+
+                    <h2>Citas</h2>
+
+                    <p>
+                        Programa, consulta y cancela
+                        las citas de los pacientes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULARIO DE CITA -->
+
+            <div class="form-card">
+
+                <h3>
+                    Programar nueva cita
+                </h3>
+
+
+                <form id="formCita">
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="pacienteCita">
+                                Paciente
+                            </label>
+
+                            <select
+                                id="pacienteCita"
+                                required>
+
+                                <option value="">
+                                    Seleccione un paciente
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="fechaCita">
+                                Fecha
+                            </label>
+
+                            <input
+                                type="date"
+                                id="fechaCita"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="horaCita">
+                                Hora
+                            </label>
+
+                            <input
+                                type="time"
+                                id="horaCita"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="motivoCita">
+                                Motivo de la consulta
+                            </label>
+
+                            <textarea
+                                id="motivoCita"
+                                rows="3"
+                                maxlength="250"
+                                placeholder="Ingrese el motivo de la consulta"
+                                required>
+                            </textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        Programar cita
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- TABLA DE CITAS -->
+
+            <div class="table-card">
+
+                <div class="table-header">
+
+                    <h3>
+                        Citas registradas
+                    </h3>
+
+                    <span id="contadorCitas">
+                        0 citas
+                    </span>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Paciente</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Motivo</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tablaCitas"></tbody>
+
+                    </table>
+
+
+                    <div
+                        id="sinCitas"
+                        class="empty-message">
+
+                        No hay citas registradas.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         MENSAJES
+    ========================================= -->
+
+    <div
+        id="mensaje"
+        class="message">
+    </div>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
