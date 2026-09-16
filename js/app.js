@@ -10,6 +10,8 @@ let citas =
 
 let fotoSeleccionada = "";
 
+console.log("Agenda Psicológica iniciada correctamente");
+
 
 // ========================================
 // ELEMENTOS DEL HTML
